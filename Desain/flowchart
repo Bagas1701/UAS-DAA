@@ -1,0 +1,13 @@
+@startuml
+start
+:Admin Registrasi Anggota;
+:Input Data Pribadi Anggota;
+:Buat Profil Anggota;
+:Anggota Memilih Program Kebugaran;
+:Track Progres;
+:Perbarui Program Berdasarkan Progres;
+:Anggota Lihat Dashboard;
+:Anggota Ikuti Tantangan;
+:Anggota Lihat Klasemen;
+stop
+@enduml

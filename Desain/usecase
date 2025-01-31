@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+
+actor "Anggota" as anggota
+actor "Admin" as admin
+
+rectangle "Sistem FitLife" {
+    usecase "Pilih Program" as UC2
+    usecase "Track Progres" as UC3
+    usecase "Lihat Dashboard" as UC4
+    usecase "Ikuti Tantangan" as UC5
+    usecase "Lihat Klasemen" as UC6
+
+    usecase "Registrasi Anggota" as UC7
+    usecase "Kelola Anggota" as UC8
+    usecase "Kelola Program Kebugaran" as UC9
+    usecase "Lihat Statistik Anggota" as UC10
+    usecase "Kelola Tantangan" as UC11
+    usecase "Kelola Klasemen" as UC12
+}
+
+anggota --> UC2
+anggota --> UC3
+anggota --> UC4
+anggota --> UC5
+anggota --> UC6
+
+admin --> UC7
+admin --> UC8
+admin --> UC9
+admin --> UC10
+admin --> UC11
+admin --> UC12
+
+@enduml

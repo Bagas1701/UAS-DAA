@@ -1,0 +1,59 @@
+@startuml
+
+entity "Anggota" {
+    + anggota_id : INT <<PK>>
+    + nama : VARCHAR(100)
+    + tanggal_lahir : DATE
+    + jenis_kelamin : ENUM('L', 'P')
+    + berat_badan : FLOAT
+    + tinggi_badan : FLOAT
+    + tujuan : ENUM('Menurunkan Berat Badan', 'Kebugaran Umum', 'Membangun Otot', 'Rehabilitasi')
+    + riwayat_kesehatan : TEXT
+    + aktivitas_harian : TEXT
+    + program_id : INT <<FK>>
+    + skor_kebugaran : FLOAT
+}
+
+entity "Program" {
+    + program_id : INT <<PK>>
+    + nama_program : VARCHAR(100)
+    + deskripsi : TEXT
+    + durasi : VARCHAR(50)
+    + fokus : VARCHAR(100)
+}
+
+entity "Latihan" {
+    + latihan_id : INT <<PK>>
+    + anggota_id : INT <<FK>>
+    + tanggal : DATE
+    + waktu : TIME
+    + aktivitas : VARCHAR(100)
+    + durasi : INT
+}
+
+entity "EvaluasiKesehatan" {
+    + evaluasi_id : INT <<PK>>
+    + anggota_id : INT <<FK>>
+    + bmi : FLOAT
+    + vo2_max : FLOAT
+    + kekuatan_otot : FLOAT
+    + fleksibilitas : FLOAT
+    + daya_tahan_kardiovaskular : FLOAT
+    + tanggal_evaluasi : DATE
+}
+
+entity "PapanKlasemen" {
+    + papan_id : INT <<PK>>
+    + anggota_id : INT <<FK>>
+    + skor : FLOAT
+    + peringkat : INT
+    + status : ENUM('Siap', 'Butuh Bimbingan')
+}
+
+' Relationships
+Anggota ||--o{ Latihan : "memiliki"
+Anggota ||--o{ EvaluasiKesehatan : "memiliki"
+Anggota ||--o{ PapanKlasemen : "memiliki"
+Program ||--o{ Anggota : "menawarkan"
+
+@enduml
