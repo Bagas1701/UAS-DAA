@@ -56,7 +56,7 @@ class AnggotaSeeder extends Seeder
                 'jenis_kelamin' => 'P',
                 'berat_badan' => 55.0,
                 'tinggi_badan' => 165.0,
-                'tujuan' => 'Rehabilitas',
+                'tujuan' => 'Rehabilitasi',
                 'riwayat_kesehatan' => 'Pernah Cedera Lutut',
                 'aktivitas_harian' => 'Yoga dan Pilates',
                 'program_id' => 4,
